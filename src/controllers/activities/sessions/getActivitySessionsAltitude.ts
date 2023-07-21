@@ -1,4 +1,4 @@
-import { AuthClient } from "@ridetracker/authclient";
+import { Client } from "../../..";
 import { DefaultResponse } from "../../../models/DefaultResponse";
 
 export type GetActivitySessionsAltitudeResponse = DefaultResponse & {
@@ -20,8 +20,8 @@ export type GetActivitySessionsAltitudeResponse = DefaultResponse & {
     }[];
 };
 
-export function getActivitySessionsAltitude(client: AuthClient, activityId: string): Promise<GetActivitySessionsAltitudeResponse> {
+export function getActivitySessionsAltitude(client: Client, activityId: string): Promise<GetActivitySessionsAltitudeResponse> {
     const url = new URL(`${client.host}/api/activities/${activityId}/sessions/altitude`);
 
-    return AuthClient.request(client, "GET", url);
+    return Client.request(client, "GET", url);
 };
