@@ -5,6 +5,7 @@ export * from "@ridetracker/authclient";
 export * from "./models/DefaultResponse";
 
 export * from "./controllers/activities/sessions/getActivitySessionsAltitude";
+export * from "./controllers/activities/sessions/getActivitySessionsSpeed";
 
 export class Client extends AuthClient {
     static async request(client: AuthClient, method: RequestMethod, url: URL, initialHeaders?: Record<string, string>, body?: BodyInit | undefined): Promise<any> {
