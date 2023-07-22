@@ -41,12 +41,16 @@ export type GetActivitySessionsInsightsResponse = DefaultResponse & {
     };
 
     battery: {
-        batteryLevel: number;
-        batteryState: number;
-        lowPowerMode?: boolean;
-        
-        timestamp: number;
-    }[];
+        polylines: {
+            points: {
+                batteryLevel: number;
+                batteryState: number;
+                lowPowerMode?: boolean;
+                
+                timestamp: number;
+            }[];
+        }[];
+    };
 };
 
 export function getActivitySessionsInsights(client: Client, activityId: string): Promise<GetActivitySessionsInsightsResponse> {
