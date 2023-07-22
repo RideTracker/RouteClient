@@ -2,62 +2,64 @@ import { Client } from "../../..";
 import { DefaultResponse } from "../../../models/DefaultResponse";
 
 export type GetActivitySessionsInsightsResponse = DefaultResponse & {
-    speed: {
-        stats: {
-            minimum: number;
-            maximum: number;
-            average: number;
+    insights: {
+        speed: {
+            stats: {
+                minimum: number;
+                maximum: number;
+                average: number;
+            };
+            
+            polylines: {
+                distanceOffset: number;
+                
+                points: {
+                    coordinate: {
+                        latitude: number;
+                        longitude: number;
+                    };
+
+                    speed: number;
+
+                    distance: number;
+                }[];
+            }[];
         };
         
-        polylines: {
-            distanceOffset: number;
+        altitude: {
+            stats: {
+                minimum: number;
+                maximum: number;
+                average: number;
+            };
             
-            points: {
-                coordinate: {
-                    latitude: number;
-                    longitude: number;
-                };
+            polylines: {
+                distanceOffset: number;
+                
+                points: {
+                    coordinate: {
+                        latitude: number;
+                        longitude: number;
+                    };
 
-                speed: number;
-
-                distance: number;
+                    altitude: number;
+                    
+                    distance: number;
+                }[];
             }[];
-        }[];
-    };
-    
-    altitude: {
-        stats: {
-            minimum: number;
-            maximum: number;
-            average: number;
         };
-        
-        polylines: {
-            distanceOffset: number;
-            
-            points: {
-                coordinate: {
-                    latitude: number;
-                    longitude: number;
-                };
 
-                altitude: number;
-                
-                distance: number;
+        battery: {
+            polylines: {
+                points: {
+                    batteryLevel: number;
+                    batteryState: number;
+                    lowPowerMode?: boolean;
+                    
+                    timestamp: number;
+                }[];
             }[];
-        }[];
-    };
-
-    battery: {
-        polylines: {
-            points: {
-                batteryLevel: number;
-                batteryState: number;
-                lowPowerMode?: boolean;
-                
-                timestamp: number;
-            }[];
-        }[];
+        };
     };
 };
 

@@ -1,7 +1,7 @@
 {
     "name": "@ridetracker/routeclient",
     "description": "A TypeScript package to provide a low-level API client for RouteService.",
-    "version": "0.9.6",
+    "version": "0.9.7",
     "author": "Nora Söderlund",
     "license": "UNLICENSED",
     "main": "dist/index.js",
