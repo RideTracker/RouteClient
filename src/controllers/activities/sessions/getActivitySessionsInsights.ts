@@ -10,6 +10,8 @@ export type GetActivitySessionsInsightsResponse = DefaultResponse & {
         };
         
         polylines: {
+            distanceOffset: number;
+            
             points: {
                 coordinate: {
                     latitude: number;
@@ -17,6 +19,8 @@ export type GetActivitySessionsInsightsResponse = DefaultResponse & {
                 };
 
                 speed: number;
+
+                distance: number;
             }[];
         }[];
     };
@@ -29,6 +33,8 @@ export type GetActivitySessionsInsightsResponse = DefaultResponse & {
         };
         
         polylines: {
+            distanceOffset: number;
+            
             points: {
                 coordinate: {
                     latitude: number;
@@ -36,6 +42,8 @@ export type GetActivitySessionsInsightsResponse = DefaultResponse & {
                 };
 
                 altitude: number;
+                
+                distance: number;
             }[];
         }[];
     };
